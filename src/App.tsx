@@ -150,7 +150,8 @@ export default function App() {
           onChange={(_, percentCrop) => setCrop(percentCrop)}
           onComplete={(c) => setCompletedCrop(c)}
           aspect={aspect}
-          minWidth={400}
+          // minWidth={400}
+          className="w-52"
           minHeight={100}
           circularCrop={true}
           keepSelection={true}
@@ -173,11 +174,9 @@ export default function App() {
             />
           </div>
           <div>
-            <button onClick={onRedirectCroppedImageURL}>Download Crop</button>
-            <div style={{ fontSize: 12, color: "#666" }}>
-              If you get a security error when downloading try opening the
-              Preview in a new tab (icon near top right).
-            </div>
+            <button onClick={onRedirectCroppedImageURL}>
+              Redirect to cropped image url
+            </button>
             <a
               href="#hidden"
               ref={hiddenAnchorRef}
