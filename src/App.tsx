@@ -11,8 +11,6 @@ import { useDebounceEffect } from "./useDebounceEffect";
 
 import "react-image-crop/dist/ReactCrop.css";
 
-// This is to demonstate how to make and center a % aspect crop
-// which is a bit trickier so we use some helper functions.
 function centerAspectCrop(
   mediaWidth: number,
   mediaHeight: number,
@@ -78,9 +76,6 @@ export default function App() {
       throw new Error("Crop canvas does not exist");
     }
 
-    // This will size relative to the uploaded image
-    // size. If you want to size according to what they
-    // are looking at on screen, remove scaleX + scaleY
     const scaleX = image.naturalWidth / image.width;
     const scaleY = image.naturalHeight / image.height;
 
@@ -126,7 +121,6 @@ export default function App() {
         imgRef.current &&
         previewCanvasRef.current
       ) {
-        // We use canvasPreview as it's much faster than imgPreview.
         canvasPreview(imgRef.current, previewCanvasRef.current, completedCrop);
       }
     },
