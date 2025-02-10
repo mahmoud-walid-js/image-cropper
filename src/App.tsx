@@ -53,7 +53,7 @@ export default function App() {
       }
 
       setError("");
-      setCrop(undefined); // Makes crop preview update between images.
+      setCrop(undefined);
       const reader = new FileReader();
       reader.addEventListener("load", () =>
         setImgSrc(reader.result?.toString() || "")
@@ -69,7 +69,7 @@ export default function App() {
     }
   }
 
-  async function onDownloadCropClick() {
+  async function onRedirectCroppedImageURL() {
     const image = imgRef.current;
     const previewCanvas = previewCanvasRef.current;
     if (!image || !previewCanvas || !completedCrop) {
@@ -173,7 +173,7 @@ export default function App() {
             />
           </div>
           <div>
-            <button onClick={onDownloadCropClick}>Download Crop</button>
+            <button onClick={onRedirectCroppedImageURL}>Download Crop</button>
             <div style={{ fontSize: 12, color: "#666" }}>
               If you get a security error when downloading try opening the
               Preview in a new tab (icon near top right).
